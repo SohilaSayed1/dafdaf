@@ -18,8 +18,7 @@ const Service = sequelize.define('Service',{
     },
     state:{
         type:DataTypes.ENUM('active','locked'),
-        allowNull:false,
-        default : 'active'
+        defaultValue : 'active'
     }
 })
 
