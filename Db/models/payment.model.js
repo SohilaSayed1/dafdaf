@@ -16,7 +16,12 @@ import { DataTypes } from 'sequelize';
      state:{
         defaultValue:'pending',
     type:DataTypes.ENUM('pending','successful')
-    }
+    },
+      PaymentMethodId:{
+       type:DataTypes.INTEGER,
+       allowNull:false
+      }
+     
     
 })
 
