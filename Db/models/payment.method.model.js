@@ -3,6 +3,12 @@ import {DataTypes} from "sequelize";
 import paymentModel from"./payment.model.js"
 const PaymentMethod = sequelize.define('PaymentMethod',{
 
+    id:{
+    type:DataTypes.INTEGER,
+    allowNull:false,
+    autoIncrement:true,
+    primaryKey:true
+    },
     name:{
         type:DataTypes.STRING,
         allowNull:false
