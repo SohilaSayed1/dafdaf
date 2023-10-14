@@ -8,5 +8,13 @@ const PaymentMethod = sequelize.define('PaymentMethod',{
         allowNull:false
     }
 })
-PaymentMethod.hasMany(paymentModel)
+PaymentMethod.hasMany(paymentModel,
+  { foreignKey : 'PaymentMethodId',
+    targetKey: 'id'});
+paymentModel.belongsTo(PaymentMethod,{ 
+    foreignKey:'PaymentMethodId',
+    onDelete:'CASCADE',
+    onUpdate:'CASCADE',
+    foreignKeyConstraint:'FK-U-P'
+})
 export default PaymentMethod;
