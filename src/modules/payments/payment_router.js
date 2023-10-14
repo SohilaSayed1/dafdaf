@@ -19,6 +19,6 @@ router.post('/addPaymentHistory',(req,res)=>{
 })
 
 router.put('/confirmPayment',(req,res)=>{
-     paymentController.updateRecord(paymentModel,req,res)
+     paymentController.updateRecord(req,res)
 })
 export default router;
