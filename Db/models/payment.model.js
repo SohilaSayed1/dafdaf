@@ -14,7 +14,7 @@ import { DataTypes } from 'sequelize';
          default: DataTypes.NOW,
     },
      state:{
-        default:'pending',
+        defaultValue:'pending',
     type:DataTypes.ENUM('pending','successful')
     }
     
