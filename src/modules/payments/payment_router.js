@@ -7,11 +7,11 @@ import paymentModel from "../../../Db/models/payment.model.js";
 
 
 const  router = Router()
-router.get('/getPaymentHistory', (req,res)=>{
+router.post('/getPaymentHistory', (req,res)=>{
      MainController.getAllRecordsWithFilter(paymentModel,res,req.body)
 })
 
-router.get('/getAllPaymentHistory',(req,res)=>{
+router.post('/getAllPaymentHistory',(req,res)=>{
      MainController.getAllRecordsOf(paymentModel,res)
 })
 router.post('/addPaymentHistory',(req,res)=>{
