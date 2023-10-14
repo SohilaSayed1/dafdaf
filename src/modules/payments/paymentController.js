@@ -39,6 +39,7 @@ export const updateRecord = (req,res)=>{
     }else {
         payment.update({PaymentMethodId:req.body.PaymentMethodId,
                         state:'successful'},{where: {id:req.body.id}})
+        return res.json({message  : "Updated"})
 
     }
 }
