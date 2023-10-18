@@ -35,10 +35,11 @@ export const confirmedPaymentSchema = Joi.object({
 export const updateRecord = (req,res)=>{
     const error =confirmedPaymentSchema.validate(req.body).error
     if(error){
-        return res.send(error)
+        return res.json({stack : error.stack})
     }else {
         payment.update({PaymentMethodId:req.body.PaymentMethodId,
                         state:'successful'},{where: {id:req.body.id}})
+        return res.json({message  : "Updated"})
 
     }
 }
