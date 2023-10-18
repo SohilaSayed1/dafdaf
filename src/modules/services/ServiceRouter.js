@@ -8,6 +8,10 @@ ServiceRouter.get('/Services', (req,res)=>{
    MainController.getAllRecordsOf(ServicesModel,res)}
 )
 
+ServiceRouter.get('/serviceWithId',(req,res)=>{
+    MainController.getAllRecordsWithFilter(ServicesModel,res, {id:req.body.id})})
+
+
 ServiceRouter.post('/ActiveServices',(req,res)=>{
      MainController.getAllRecordsWithFilter(ServicesModel,res, {state:'active'})})
 
