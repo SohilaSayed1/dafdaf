@@ -4,7 +4,7 @@ import { Router} from 'express'
 import ServicesModel from "../../../Db/models/Services.model.js";
 
 const ServiceRouter = Router()
-ServiceRouter.get('/Services', (req,res)=>{
+ServiceRouter.post('/Services', (req,res)=>{
    MainController.getAllRecordsOf(ServicesModel,res)}
 )
 
