@@ -8,7 +8,7 @@ ServiceRouter.get('/Services', (req,res)=>{
    MainController.getAllRecordsOf(ServicesModel,res)}
 )
 
-ServiceRouter.get('/serviceWithId',(req,res)=>{
+ServiceRouter.post('/serviceWithId',(req,res)=>{
     MainController.getAllRecordsWithFilter(ServicesModel,res, {id:req.body.id})})
 
 
