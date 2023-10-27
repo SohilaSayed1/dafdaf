@@ -15,7 +15,7 @@ ServiceRouter.post('/serviceWithId',(req,res)=>{
 ServiceRouter.post('/ActiveServices',(req,res)=>{
      MainController.getAllRecordsWithFilter(ServicesModel,res, {state:'active'})})
 
-ServiceRouter.post('/Services',(req,res)=>{
+ServiceRouter.post('/addServices',(req,res)=>{
     MainController.addRecord(ServicesModel,req,res,ServiceValidator.serviceSchema)
 })
 
