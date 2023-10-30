@@ -8,7 +8,7 @@ import service from './modules/services/ServiceRouter.js'
 import morgan from 'morgan'
 import cors from 'cors'
 
-export const morganDev = morgan('dev')
+export const morganDev = morgan('combined')
 
 const initApp = (app, express)=>{
     app.use(cors())
