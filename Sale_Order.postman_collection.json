@@ -1,0 +1,38 @@
+{
+	"info": {
+		"_postman_id": "389bf41b-3f09-4fbb-a74e-33c0d14e13ed",
+		"name": "Sale_Order",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25539006"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8080/sale_order",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"params\": {\n    \"orders\": [\n      {\n        \"eds_order_id\": 1,\n        \"eds_partner_id\": 2,\n        \"order_type\": \"one_to_one\",\n        \"date\": \"2023-12-09\",\n        \"eds_payment_id\": \"1\",\n        \"eds_shipping_id\": \"1\",\n        \"eds_tracking_reference\": \"posta\",\n        \"eds_shipping_company_id\":1,\n        \"lines\": {\n          \"product_id\": \"1\",\n          \"qty\": 2,\n          \"unit_price\": 50.0,\n          \"taxes\": [1, 2]\n        }\n      }\n    ]\n  }\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/sale_order",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"sale_order"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
