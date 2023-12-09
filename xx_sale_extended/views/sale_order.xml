@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_sale_order_extended_form" model="ir.ui.view">
+        <field name="name">sale.order.form.inherit</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form/sheet/group[@name='sale_header']" position="inside">
+                <group>
+                    <field name="xx_order_type" string='Order Type'/>
+                </group>
+            </xpath>
+            <xpath expr="//page[@name='other_information']/group[2]/group[@name='sale_reporting']" position="after">
+                <group name ="eds" string="EDS data">
+                    <group>
+                        <field name="xx_migrated_order_id"/>
+                       <field name="xx_migrated_payment_id"/>
+                       <field name="xx_migrated_shipping_id"/>
+                       <field name="xx_migrated_tracking_reference"/>
+                        <field name="xx_shipping_company_id" string = "Carrier" widget = "many2one_tags"/>
+                    </group>
+                </group>
+            </xpath>
+
+        </field>
+    </record>
+    <record id="sale_order_filter" model="ir.ui.view">
+        <field name="name">My Child Orders</field>
+        <field name="model">sale.order</field>
+       <field name="inherit_id" ref="sale.sale_order_view_search_inherit_sale"/>
+        <field name="arch" type="xml">
+                <xpath expr="//search/filter[@name='my_sale_orders_filter']" position="inside">
+                <filter string="My Child Orders"
+                name="My_Child_Orders"
+                domain="[('xx_order_type','=','child'),('state','=','draft')]"/>
+                </xpath>
+        </field>
+    </record>
+
+
+</odoo>

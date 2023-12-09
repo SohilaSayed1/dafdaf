@@ -1,0 +1,22 @@
+<odoo>
+    <record id="view_sale_order_line_form" model="ir.ui.view">
+        <field name="name">sale.order.line.inherit</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+
+
+           <xpath expr="//page[@name='order_lines']/field[@name='order_line']/tree[1]/field[@name='product_uom_qty']" position="after">
+                <field name="xx_remaining_qty" type="float" readonly = "1"  style="text-align: right; padding-right: 10px; margin-top: 20px;"/>
+                <field name="xx_original_qty" type="float" readonly = "1" style="text-align: right; padding-right: 10px; margin-top: 20px;"/>
+                 <field name="xx_child_line_id" invisible="1"/>
+               <field name="xx_so_type" invisible="1"/>
+                <field name="xx_child_so_id" readonly = "1" attrs="{'invisible': [('xx_so_type', '!=', 'parent')]}"/>
+
+            </xpath>
+
+        </field>
+
+    </record>
+
+</odoo>
